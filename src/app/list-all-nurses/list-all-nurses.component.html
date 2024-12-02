@@ -1,0 +1,27 @@
+<div class="p-4 d-flex flex-column gap-4">
+    <h2>List all nurses</h2>
+    <table class="table table-bordered" *ngIf="foundNurses.length > 0; else noResults">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>First Surname</th>
+                <th>Second Surname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let nurse of foundNurses">
+                <td>{{ nurse.id }}</td>
+                <td>{{ nurse.name }}</td>
+                <td>{{ nurse.first_surname }}</td>
+                <td>{{ nurse.second_surname }}</td>
+                <td>{{ nurse.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ng-template #noResults>
+        <p>Nurse not found.</p>
+    </ng-template>
+</div>
